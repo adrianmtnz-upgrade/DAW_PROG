@@ -13,10 +13,8 @@ public class Ejercicio02 {
     }
 
     public static int sumatoria(int n) {
-        if (n <= 1) {
-            return 1;
-        } else {
-            return n + sumatoria(n - 1);
-        }
+        if (n < 0) return -1;
+        if (n == 0 )return 0;
+        return sumatoria(n - 1);
     }
 }
