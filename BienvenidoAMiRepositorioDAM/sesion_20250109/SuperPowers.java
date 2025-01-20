@@ -1,4 +1,4 @@
-package BienvenidoAMiRepositorioDAM.sesion_20250109;
+package sesion_20250109;
 
 public class SuperPowers {
     public static void main(String[] args) {
