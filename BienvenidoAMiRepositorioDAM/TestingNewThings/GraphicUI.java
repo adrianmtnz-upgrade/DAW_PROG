@@ -15,7 +15,7 @@ public class GraphicUI {
     public static void main(String[] args) {
         
         // Data for new Piskel frame (array of integers representing pixel colors)
-        int[][] newPiskelData = new int[1][1800]; // 40x40 grid = 1024 pixels per frame
+        int[][] newPiskelData = new int[1][1800]; // 40x45 grid = 1800 pixels per frame
         newPiskelData[0] = new int[] {
             0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 
             0xff1c1b1b, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 
@@ -73,7 +73,7 @@ public class GraphicUI {
         frames.add(createImageFromData(newPiskelData[0]));
 
         // Display the generated image in a JFrame with a larger scale
-        displayImage(frames.get(0), 20); // 10 is the scaling factor
+        displayImage(frames.get(0), 20); // 20 is the scaling factor
     }
 
     // Create a BufferedImage from the pixel data
@@ -90,13 +90,13 @@ public class GraphicUI {
 
     // Display the BufferedImage in a JFrame with scaling
     private static void displayImage(BufferedImage image, int scale) {
-        JFrame frame = new JFrame("Generated Image");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        // Scale the image and set the size of the JFrame accordingly
-        frame.setSize(NEW_PISKEL_FRAME_WIDTH * scale, NEW_PISKEL_FRAME_HEIGHT * scale); 
-        frame.add(new JLabel(new ImageIcon(image.getScaledInstance(image.getWidth() * scale, image.getHeight() * scale, Image.SCALE_SMOOTH))));
-        frame.setVisible(true);
+    JFrame frame = new JFrame("Generated Image");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    // Scale the image and set the size of the JFrame accordingly
+    frame.setSize(NEW_PISKEL_FRAME_WIDTH * scale, NEW_PISKEL_FRAME_HEIGHT * scale); 
+    frame.add(new JLabel(new ImageIcon(image.getScaledInstance(image.getWidth() * scale, image.getHeight() * scale, Image.SCALE_SMOOTH))));
+    frame.setVisible(true);
     }
 }
 
