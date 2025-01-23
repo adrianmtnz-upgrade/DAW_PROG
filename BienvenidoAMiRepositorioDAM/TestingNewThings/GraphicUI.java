@@ -64,6 +64,10 @@ public class GraphicUI {
             0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff343333, 0xff1c1b1b, 0xff1c1b1b, 0xff1c1b1b
             };
 
+            // para modificar los colores he encontrado el siguiente algoritmo
+            // color a modificar = 0xff 56 34 12
+            // color modificado = 0xff 12 34 56
+
         // Create the list of frames (in this case, just one frame)
         List<BufferedImage> frames = new ArrayList<>();
         frames.add(createImageFromData(newPiskelData[0]));
