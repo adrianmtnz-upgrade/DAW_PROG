@@ -1,5 +1,10 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src",
+        "ActividadesClase/Examen_2024T1",
+        "ActividadesClase/ExamenRepaso_2025T2/EjercicioAPIs",
+        "ActividadesClase/ExamenRepaso_2025T2"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"

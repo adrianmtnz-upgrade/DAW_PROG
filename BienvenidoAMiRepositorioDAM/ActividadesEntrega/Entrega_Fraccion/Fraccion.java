@@ -1,3 +1,5 @@
+package Entrega_Fraccion;
+
 import java.util.Scanner;
 
 /**
