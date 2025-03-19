@@ -9,7 +9,7 @@
 				"${dependencies}"
 			],
 			"problemMatcher": [],
-			"label": "java (buildArtifact): DAM_PROG",
+			"label": "java (buildArtifact): DAW_PROG",
 			"group": {
 				"kind": "build",
 				"isDefault": true

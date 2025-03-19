@@ -3,7 +3,8 @@
         "src",
         "ActividadesClase/Examen_2024T1",
         "ActividadesClase/ExamenRepaso_2025T2/EjercicioAPIs",
-        "ActividadesClase/ExamenRepaso_2025T2"
+        "ActividadesClase/ExamenRepaso_2025T2",
+        "BienvenidoAMiRepositorioDAW/TestingNewThings/readingAndWritingFiles/ASCII"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [

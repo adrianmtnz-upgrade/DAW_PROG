@@ -1,0 +1,19 @@
+==== CONFIGS ====		
+{
+    "base_path": "c:\\Users\\adria\\Desktop\\FP-DAW\\GitHub\\DAW_PROG\\BienvenidoAMiRepositorioDAW\\TestingNewThings",
+    "out": "c:\\Users\\adria\\Desktop\\FP-DAW\\GitHub\\DAW_PROG\\BienvenidoAMiRepositorioDAW\\TestingNewThings\\javadoc",
+    "javadoc_executable": "C:\\Program Files\\Java\\jdk-23\\bin\\javadoc.exe",
+    "exclude": [],
+    "raw_params": ""
+}
+
+==== COMMAND ====
+"C:\Program Files\Java\jdk-23\bin\javadoc.exe" 
+	-sourcepath "c:\Users\adria\Desktop\FP-DAW\GitHub\DAW_PROG\BienvenidoAMiRepositorioDAW\TestingNewThings" 
+	-d "c:\Users\adria\Desktop\FP-DAW\GitHub\DAW_PROG\BienvenidoAMiRepositorioDAW\TestingNewThings\javadoc" 
+	"c:\Users\adria\Desktop\FP-DAW\GitHub\DAW_PROG\BienvenidoAMiRepositorioDAW\TestingNewThings\graphics\GraphicUI.java"
+	"c:\Users\adria\Desktop\FP-DAW\GitHub\DAW_PROG\BienvenidoAMiRepositorioDAW\TestingNewThings\graphics\VentanaConTerminal.java"
+	"c:\Users\adria\Desktop\FP-DAW\GitHub\DAW_PROG\BienvenidoAMiRepositorioDAW\TestingNewThings\readingAndWritingFiles\ASCII\File1.java"
+	"c:\Users\adria\Desktop\FP-DAW\GitHub\DAW_PROG\BienvenidoAMiRepositorioDAW\TestingNewThings\src\App.java"
+
+
