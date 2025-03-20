@@ -1,2 +1,2 @@
 # DAM_PROG
- Proyects and exercises done at DAM GSR1 
+ Proyects and exercises done at DAW GSR1 
