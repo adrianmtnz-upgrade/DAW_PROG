@@ -1,4 +1,4 @@
-package sesion20250312;
+package EJercicioEntornosTEsts;
 
 /**
  * Clase TemperatureConverter que implementa conversiones de temperatura.

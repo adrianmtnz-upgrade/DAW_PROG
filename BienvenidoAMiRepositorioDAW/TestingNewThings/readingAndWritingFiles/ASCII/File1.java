@@ -1,7 +1,8 @@
-package readingAndWrittingFiles.ASCII;
+package ASCII;
 
 import java.io.*;
 import java.util.Scanner;
+
 
 public class File1 {
     File myFile;
@@ -18,14 +19,16 @@ public class File1 {
             
             } catch(IOException ex){ ex.printStackTrace(System.out); }
         }
-        
+        DateFormatter lastModifiedFormated = new DateFormatter();
+        String dataFormatted = lastModifiedFormated.dateFormat(myFile.lastModified());
+
         System.out.println("\n" +
             "Can be read?         " + myFile.canRead() + "\n" +
             "Can be written?      " + myFile.canWrite() + "\n" +
             "Can execute?         " + myFile.canExecute() + "\n" +
             "It's a directory?    " + myFile.isDirectory() + "\n" +
             "It's a file?         " + myFile.isFile() + "\n" +
-            "Last update date:    " + myFile.lastModified() + "\n" +
+            "Last update date:    " + dataFormatted + "\n" +
             "Size:                " + myFile.length()+" bytes" + "\n"
         );
     }
@@ -81,6 +84,7 @@ public class File1 {
         System.out.println("Do you want to delete the file?: (Y/N)"+"\n");
        
         if (user.next().toUpperCase().equals("Y")) file.deleteTextFile();
+        System.out.println();
         user.close();
     }
 }
