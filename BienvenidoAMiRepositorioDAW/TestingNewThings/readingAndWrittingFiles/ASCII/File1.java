@@ -1,14 +1,16 @@
 package readingAndWrittingFiles.ASCII;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class File1 {
-    public static void main(String[] args) throws IOException{
-        
-        File myFile = new File("testFile.txt");
-        String writtenMessage = "This phrase must be written first before being read";
-        String readMessageLn1 = "";
-        String readMessageLn2 = "";
+    File myFile;
+    String writtenMessage = "This phrase must be written first before being read";
+    String content = "";
+
+    private void createTextFile(){
+        myFile = new File("testFile.txt");
+
         if(!myFile.exists()){
             try{
                 myFile.createNewFile();
@@ -26,24 +28,59 @@ public class File1 {
             "Last update date:    " + myFile.lastModified() + "\n" +
             "Size:                " + myFile.length()+" bytes" + "\n"
         );
+    }
 
-        try{
-            FileWriter file = new FileWriter(myFile);
-            file.write("----- MY TEST FILE -----\n");
-            file.write(writtenMessage);
-            file.close();
+    private void deleteTextFile(){
+        if (myFile.delete()){
+            System.out.println("File deleted succesfully");
+        } else {
+            System.out.println("Error, couldn't delete the file");
+        }
+    }
 
-        }catch (IOException ex) { ex.printStackTrace(System.out); }
+    private void writeTextFile(String line){
+            try{
+                FileWriter writer = new FileWriter(myFile, true);
+                writer.write(line);
+                writer.close();
+    
+            }catch (IOException ex) { ex.printStackTrace(System.out); }
 
+    }
+
+    private void readTextFile(){
         try{
             FileReader reader = new FileReader(myFile);
             BufferedReader BR = new BufferedReader(reader);
-            readMessageLn1 = BR.readLine();
-            readMessageLn2 = BR.readLine();
+            content = BR.readLine();
+
+            while(content != null){
+                System.out.println(content);
+                content = BR.readLine();
+            }
+            System.out.println("\n");
             BR.close();
 
         }catch (Exception ex) { ex.printStackTrace(System.out); }
+    }
+    public static void main(String[] args) throws IOException{
+       
+        File1 file = new File1();
+        Scanner user = new Scanner(System.in);
 
-        System.out.println("The saved message is: " +"\n"+"\n"+ readMessageLn1 + "\n" + readMessageLn2);
+        file.createTextFile();
+        file.writeTextFile("----- MY TEST FILE -----"+"\n"+"\n");
+        file.writeTextFile(file.writtenMessage +"\n");
+
+        System.out.println("\n"+"The saved message is: " +"\n"+"\n");
+        file.readTextFile();
+
+        file.writeTextFile("Another line created"+ "\n");
+        file.readTextFile();
+
+        System.out.println("Do you want to delete the file?: (Y/N)"+"\n");
+       
+        if (user.next().toUpperCase().equals("Y")) file.deleteTextFile();
+        user.close();
     }
 }

@@ -1,2 +1,0 @@
------ MY TEST FILE -----
-This phrase must be written first before being read
