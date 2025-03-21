@@ -1,6 +1,7 @@
 package binary;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class BinFile {
 
@@ -62,13 +63,33 @@ public class BinFile {
         }
     }
 
+    // Method to delete the binary file
+    private void deleteBinary(){
+        File file = new File(fileRelPath);
+        if (file.delete()){
+            System.out.println("File deleted succesfully");
+        } else {
+            System.out.println("Error, couldn't delete the file");
+        }
+    }
+
     // Main method to test writing, appending, and reading from the binary file
     public static void main(String[] args) throws ClassNotFoundException {
         BinFile test = new BinFile();
+        Scanner user = new Scanner(System.in);
+
         test.writeBinary();
+
         test.addBinary(39, "Juanjo Abenza");
         test.addBinary(28, "Laura Garcia");
         test.addBinary(35, "Carlos Fernandez");
+        
         test.readBinary();
+        
+        System.out.println("Do you want to delete the file?: (Y/N)"+"\n");
+        
+        if (user.next().toUpperCase().equals("Y")) test.deleteBinary();
+        System.out.println();
+        user.close();
     }
 }
