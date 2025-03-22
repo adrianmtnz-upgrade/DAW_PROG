@@ -12,7 +12,7 @@ public class Movie {
     }
 
     public String gettitle() {
-        return title;
+        return this.title;
     }
 
     public void settitle(String title) {
@@ -21,6 +21,6 @@ public class Movie {
 
     @Override
     public String toString(){
-        return "Movie: "+ title + "\n";
+        return this.title;
     }
 }

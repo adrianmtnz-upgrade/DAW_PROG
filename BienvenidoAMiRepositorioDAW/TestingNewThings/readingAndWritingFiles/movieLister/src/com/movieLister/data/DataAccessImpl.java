@@ -13,77 +13,80 @@ public class DataAccessImpl implements DataAccessible{
 
     @Override
     public boolean fileExistenceCheck(String resourceName) throws DataAccessException {
+        // Check if the file exists
         File file = new File(resourceName);
         return file.exists();
     }
 
     @Override
     public List<Movie> listMovies(String resourceName) throws DataReaderException {
+        // List all movies from the file
         File file = new File(resourceName);
         List<Movie> movies = new ArrayList<>();
         try {
             BufferedReader BR = new BufferedReader(new FileReader(file));
             String content = null;
-            try {
+            content = BR.readLine();
+                
+            while (content != null) {
+                // Create a new movie object and add it to the list
+                Movie movie = new Movie(content);
+                movies.add(movie);
                 content = BR.readLine();
-                while (content != null) {
-                    Movie movie = new Movie(content);
-                    movies.add(movie);
-                    content = BR.readLine();
-                }
-                BR.close();
-            } catch (IOException exception) {
-                exception.printStackTrace(System.out);
             }
-        } catch (FileNotFoundException exception) {
+            BR.close();
+
+        } catch (IOException exception) {
             exception.printStackTrace(System.out);
             throw new DataReaderException("Exception on movie listing: " + exception.getMessage());
-        } return movies;
+        } 
+        return movies;
     }
 
     @Override
     public void writeMovie(Movie movie, String resourceName, boolean append) throws DataWriterException {
+        // Write a movie to the file
         File file = new File(resourceName);
         try {
             PrintWriter out = new PrintWriter(new FileWriter(file, append));
             out.println(movie.toString());
             out.close();
-            System.out.println("\n" + "Added movie: " + movie + "\n");
         } catch (IOException exception) {
             exception.printStackTrace(System.out);
-            throw new DataWriterException("Exception on writting file: " + exception.getMessage());
+            throw new DataWriterException("Exception on writing file: " + exception.getMessage());
         }
     }
 
     @Override
     public String searchMovies(String resourceName, String searchResource) throws DataReaderException {
+        // Search for a movie in the file
         File file = new File(resourceName);
         String result = null;
         try {
             BufferedReader BR = new BufferedReader(new FileReader(file));
             String line = null;
             line = BR.readLine();
-            int index = 1;
             
-            while (line != null) {
+            for(int index= 1; line != null; index++) {
                 if(searchResource != null && searchResource.equalsIgnoreCase(line)){
-                    System.out.println();
-                    result = "Movie: " + line + "found on index " + index;
+                    // Movie found
+                    result = "Movie: " + line + " found on index " + index;
                     break;
                 }
-                BR.readLine();
-                index++;    
+                line = BR.readLine();    
             }
             BR.close();
+            return result;
         } catch (IOException exception) {
             exception.printStackTrace(System.out);
             throw new DataReaderException("Exception on movie searching: " + exception.getMessage());
         }
-        return result;
+        
     }
 
     @Override
     public void createFile(String resourceName) throws DataAccessException {
+        // Create a new file
         File file = new File(resourceName);
         try {
             PrintWriter out = new PrintWriter(new FileWriter(file));
@@ -97,6 +100,7 @@ public class DataAccessImpl implements DataAccessible{
 
     @Override
     public void deleteFile(String resourceName) throws DataAccessException {
+        // Delete the file
         File file = new File(resourceName);
         if(file.exists()) file.delete();
         System.out.println("File has been deleted");
