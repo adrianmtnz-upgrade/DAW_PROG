@@ -7,7 +7,7 @@ import movieLister.src.com.movieLister.exceptions.DataAccessException;
 import movieLister.src.com.movieLister.exceptions.DataReaderException;
 import movieLister.src.com.movieLister.exceptions.DataWriterException;
 
-public interface DataAccess {
+public interface DataAccessible {
     
     // Creating necessary methods to execute operations on the file
     public boolean fileExistenceCheck(String resourceName) throws DataAccessException;
@@ -15,5 +15,5 @@ public interface DataAccess {
     public void writeMovie(Movie movie, String resourceName, boolean append) throws DataWriterException;
     public String searchMovies(String resourceName, String searchResource) throws DataReaderException;
     public void createFile(String resourceName) throws DataAccessException;
-    public void deleteMovie(String resourceName) throws DataAccessException;
+    public void deleteFile(String resourceName) throws DataAccessException;
 }

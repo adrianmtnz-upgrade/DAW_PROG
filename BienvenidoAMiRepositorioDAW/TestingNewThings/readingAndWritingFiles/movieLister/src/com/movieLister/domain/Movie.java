@@ -1,26 +1,26 @@
 package movieLister.src.com.movieLister.domain;
 
 public class Movie {
-    private String name;
+    private String title;
 
     public Movie() {
 
     }
 
-    public Movie(String name) {
-        this.name = name;
+    public Movie(String title) {
+        this.title = title;
     }
 
-    public String getName() {
-        return name;
+    public String gettitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void settitle(String title) {
+        this.title = title;
     }
 
     @Override
     public String toString(){
-        return "Movie: "+ name + "\n";
+        return "Movie: "+ title + "\n";
     }
 }

@@ -9,7 +9,7 @@ import movieLister.src.com.movieLister.exceptions.DataAccessException;
 import movieLister.src.com.movieLister.exceptions.DataReaderException;
 import movieLister.src.com.movieLister.exceptions.DataWriterException;
 
-public class DataAccessImpl implements DataAccess{
+public class DataAccessImpl implements DataAccessible{
 
     @Override
     public boolean fileExistenceCheck(String resourceName) throws DataAccessException {
@@ -96,7 +96,7 @@ public class DataAccessImpl implements DataAccess{
     }
 
     @Override
-    public void deleteMovie(String resourceName) throws DataAccessException {
+    public void deleteFile(String resourceName) throws DataAccessException {
         File file = new File(resourceName);
         if(file.exists()) file.delete();
         System.out.println("File has been deleted");
