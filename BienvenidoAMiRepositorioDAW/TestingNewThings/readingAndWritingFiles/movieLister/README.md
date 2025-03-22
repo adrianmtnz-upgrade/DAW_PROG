@@ -28,7 +28,7 @@ The program will provide the following options in the menu:
 
 
 
-## UML Classes diagram:
+## 📑UML Classes diagram:
 
                         ┌─────────────────────────────────────┐
                         │                 Movie               │
