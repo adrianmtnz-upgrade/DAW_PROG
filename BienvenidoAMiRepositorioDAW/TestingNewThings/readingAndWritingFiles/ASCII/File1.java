@@ -15,7 +15,7 @@ public class File1 {
         if(!myFile.exists()){
             try{
                 myFile.createNewFile();
-                System.out.println(myFile.getName() + " ha sido creado en " + myFile.getAbsolutePath());
+                System.out.println(myFile.getName() + " has been created on: " + myFile.getAbsolutePath());
             
             } catch(IOException ex){ ex.printStackTrace(System.out); }
         }

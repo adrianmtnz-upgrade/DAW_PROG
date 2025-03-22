@@ -37,6 +37,7 @@ public class DataAccessImpl implements DataAccess{
             }
         } catch (FileNotFoundException exception) {
             exception.printStackTrace(System.out);
+            throw new DataReaderException("Exception on movie listing: " + exception.getMessage());
         } return movies;
     }
 
@@ -55,18 +56,49 @@ public class DataAccessImpl implements DataAccess{
     }
 
     @Override
-    public String searchMovies() throws DataReaderException {
-        throw new UnsupportedOperationException("Unimplemented method 'searchMovies'");
+    public String searchMovies(String resourceName, String searchResource) throws DataReaderException {
+        File file = new File(resourceName);
+        String result = null;
+        try {
+            BufferedReader BR = new BufferedReader(new FileReader(file));
+            String line = null;
+            line = BR.readLine();
+            int index = 1;
+            
+            while (line != null) {
+                if(searchResource != null && searchResource.equalsIgnoreCase(line)){
+                    System.out.println();
+                    result = "Movie: " + line + "found on index " + index;
+                    break;
+                }
+                BR.readLine();
+                index++;    
+            }
+            BR.close();
+        } catch (IOException exception) {
+            exception.printStackTrace(System.out);
+            throw new DataReaderException("Exception on movie searching: " + exception.getMessage());
+        }
+        return result;
     }
 
     @Override
-    public void createFile() throws DataAccessException {
-        throw new UnsupportedOperationException("Unimplemented method 'createFile'");
+    public void createFile(String resourceName) throws DataAccessException {
+        File file = new File(resourceName);
+        try {
+            PrintWriter out = new PrintWriter(new FileWriter(file));
+            out.close();
+            System.out.println("File has been created");
+        } catch (IOException exception) {
+            exception.printStackTrace(System.out);
+            throw new DataAccessException("Exception on creating file: "+ exception.getMessage());        
+        }
     }
 
     @Override
-    public void deleteMovie() throws DataAccessException {
-        throw new UnsupportedOperationException("Unimplemented method 'deleteMovie'");
+    public void deleteMovie(String resourceName) throws DataAccessException {
+        File file = new File(resourceName);
+        if(file.exists()) file.delete();
+        System.out.println("File has been deleted");
     }
-
 }
