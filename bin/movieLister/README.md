@@ -33,48 +33,64 @@ The program will provide the following options in the menu:
                         ┌─────────────────────────────────────┐
                         │                 Movie               │
                         ├─────────────────────────────────────┤
-                        │ -name: String                       │
+                        │ -title: String                      │
                         ├─────────────────────────────────────┤
-                        │ +Movie()                            │
-                        │ +Movie(name: String)                │
-                        │ +getName(): String                  │
-                        │ +setName(name: String): void        │
+                        │ +Movie(title: String)               │
+                        │ +getTitle(): String                 │
+                        │ +setTitle(title: String): void      │
                         │ +toString(): String                 │
                         └─────────────────────────────────────┘
 
               ┌──────────────────────────────────────────────────────────┐
-              │                          DataAccess                      │
+              │                          DataAccessible                  │
               ├──────────────────────────────────────────────────────────┤
-              │ +checkIfFileExists(fileName: String): boolean            │
-              │ +list(name: String): List<Movie>                         │
-              │ +write(movie: Movie, fileName: String, append: Boolean): │
-              │   void                                                   │
-              │ +search(fileName: String, search: String): String        │
-              │ +create(fileName: String): void                          │
-              │ +delete(fileName: String): void                          │
+              │ +fileExistenceCheck(resourceName: String): boolean       │
+              │ +listMovies(resourceName: String): List<Movie>           │
+              │ +writeMovie(movie: Movie, resourceName: String, append:  │
+              │   boolean): void                                         │
+              │ +searchMovies(resourceName: String, searchResource:      │
+              │   String): String                                        │
+              │ +createFile(resourceName: String): void                  │
+              │ +deleteFile(resourceName: String): void                  │
               ├──────────────────────────────────────────────────────────┤
               │ Includes the necessary operations to execute in the file │
               └──────────────────────────────────────────────────────────┘
 
                 ┌─────────────────────────────────────────────────────┐
-                │                       MoviesDAO                     │
+                │                       DataAccessImpl                │
                 ├─────────────────────────────────────────────────────┤
-                │ +addMovie(movieName: String, fileName: String): void│
-                │ +listMovies(fileName: String): void                 │
-                │ +searchMovie(fileName: String, search: String): void│
-                │ +initializeFile(fileName: String): void             │
+                │ +fileExistenceCheck(resourceName: String): boolean  │
+                │ +listMovies(resourceName: String): List<Movie>      │
+                │ +writeMovie(movie: Movie, resourceName: String,     │
+                │   append: boolean): void                            │
+                │ +searchMovies(resourceName: String, searchResource: │
+                │   String): String                                   │
+                │ +createFile(resourceName: String): void             │
+                │ +deleteFile(resourceName: String): void             │
                 ├─────────────────────────────────────────────────────┤
-                │    Contains the necessary operations for the app    │
+                │ Contains the implementations of the necessary       │
+                │ operations for the application                      │
                 └─────────────────────────────────────────────────────┘
 
-               ┌────────────────────────────────────────────────────────┐
-               │                       MoviesDAOImpl                    │
-               ├────────────────────────────────────────────────────────┤
-               │ +MoviesDAOImpl()                                       │
-               │ +addMovie(movieName: String, fileName: String): void   │
-               │ +listMovies(fileName: String): void                    │
-               │ +initializeFile(fileName: String): void                │
-               ├────────────────────────────────────────────────────────┤
-               │     Contains the implementations of the necessary      │
-               │            operations for the application              │
-               └────────────────────────────────────────────────────────┘
+              ┌──────────────────────────────────────────────────────────┐
+              │                      ControllableMovie                   │
+              ├──────────────────────────────────────────────────────────┤
+              │ +addMovie(title: String): void                           │
+              │ +list(): void                                            │
+              │ +search(movieToSearch: String): void                     │
+              │ +initiateNewMovieController(): void                      │
+              └──────────────────────────────────────────────────────────┘
+
+                ┌─────────────────────────────────────────────────────┐
+                │                   MovieControlImpl                  │
+                ├─────────────────────────────────────────────────────┤
+                │ -data: DataAccessible                               │
+                ├─────────────────────────────────────────────────────┤
+                │ +MovieControlImpl()                                 │
+                │ +addMovie(title: String): void                      │
+                │ +list(): void                                       │
+                │ +search(movieToSearch: String): void                │
+                │ +initiateNewMovieController(): void                 │
+                ├─────────────────────────────────────────────────────┤
+                │ Implements the ControllableMovie interface          │
+                └─────────────────────────────────────────────────────┘
