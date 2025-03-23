@@ -1,4 +1,4 @@
-package sesion_20250220;
+package ActividadesClase.sesion_20250220;
 
 interface Sonido {
     void hacerSonido();

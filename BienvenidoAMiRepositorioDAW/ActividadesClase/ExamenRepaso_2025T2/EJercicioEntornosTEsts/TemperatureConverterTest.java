@@ -1,4 +1,4 @@
-package EJercicioEntornosTEsts;
+package ActividadesClase.ExamenRepaso_2025T2.EJercicioEntornosTEsts;
 
 
 

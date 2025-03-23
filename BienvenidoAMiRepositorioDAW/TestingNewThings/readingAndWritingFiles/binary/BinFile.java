@@ -1,4 +1,4 @@
-package binary;
+package TestingNewThings.readingAndWritingFiles.binary;
 
 import java.io.*;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package movieLister.src.com.movieLister.domain;
+package TestingNewThings.readingAndWritingFiles.movieLister.src.com.movieLister.domain;
 
 public class Movie {
     private String title;

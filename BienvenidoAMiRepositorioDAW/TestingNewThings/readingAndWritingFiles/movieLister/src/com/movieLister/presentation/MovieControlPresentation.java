@@ -1,9 +1,9 @@
-package movieLister.src.com.movieLister.presentation;
+package TestingNewThings.readingAndWritingFiles.movieLister.src.com.movieLister.presentation;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import movieLister.src.com.movieLister.service.ControllableMovie;
-import movieLister.src.com.movieLister.service.MovieControlImpl;
+import TestingNewThings.readingAndWritingFiles.movieLister.src.com.movieLister.service.ControllableMovie;
+import TestingNewThings.readingAndWritingFiles.movieLister.src.com.movieLister.service.MovieControlImpl;
 
 public class MovieControlPresentation {
    

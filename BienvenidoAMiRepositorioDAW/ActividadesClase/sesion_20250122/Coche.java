@@ -1,4 +1,4 @@
-package sesion_20250122;
+package ActividadesClase.sesion_20250122;
 
 public class Coche {
     private String marca;

@@ -1,11 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "BienvenidoAMiRepositorioDAW/TestingNewThings/readingAndWritingFiles",
-        "BienvenidoAMiRepositorioDAW/ActividadesClase/sesion_20250109",
-        "BienvenidoAMiRepositorioDAW/ActividadesClase/Examen_2024T1",
-        "BienvenidoAMiRepositorioDAW/ActividadesClase/ExamenRepaso_2025T2/EjercicioAPIs",
-        "BienvenidoAMiRepositorioDAW/ActividadesClase/ExamenRepaso_2025T2",
-        "BienvenidoAMiRepositorioDAW/ActividadesClase"
+        "BienvenidoAMiRepositorioDAW"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [

@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package ActividadesEntrega.Entrega_20250120;
 
+import java.util.Scanner;
 
 public class Ej2Combinaciones {
     /* 

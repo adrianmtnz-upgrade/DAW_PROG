@@ -1,3 +1,5 @@
+package ActividadesClase.Examen_2024T1;
+
 import java.util.Scanner;
 
 public class Matrices {

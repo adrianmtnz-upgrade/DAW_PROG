@@ -1,9 +1,10 @@
-package TestingNewThings;
-    import java.awt.image.BufferedImage;
-    import javax.swing.*;
-    import java.awt.*;
-    import java.util.ArrayList;
-    import java.util.List;
+package TestingNewThings.graphics;
+
+import java.awt.image.BufferedImage;
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VentanaConTerminal extends JFrame {
 

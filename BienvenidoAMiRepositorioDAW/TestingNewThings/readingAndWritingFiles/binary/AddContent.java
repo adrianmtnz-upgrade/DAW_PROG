@@ -1,4 +1,4 @@
-package binary;
+package TestingNewThings.readingAndWritingFiles.binary;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;

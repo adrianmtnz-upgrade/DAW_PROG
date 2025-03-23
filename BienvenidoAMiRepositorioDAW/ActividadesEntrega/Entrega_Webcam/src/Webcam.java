@@ -1,4 +1,4 @@
-package src;
+package ActividadesEntrega.Entrega_Webcam.src;
 
 public class Webcam {
     

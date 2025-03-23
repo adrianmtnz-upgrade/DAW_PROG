@@ -1,4 +1,5 @@
-package sesion_20250115;
+package ActividadesClase.sesion_20250115;
+
 
 public class Ejercicio02 {
     /* 

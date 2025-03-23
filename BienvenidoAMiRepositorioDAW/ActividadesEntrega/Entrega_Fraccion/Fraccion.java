@@ -1,4 +1,4 @@
-package Entrega_Fraccion;
+package ActividadesEntrega.Entrega_Fraccion;
 
 import java.util.Scanner;
 

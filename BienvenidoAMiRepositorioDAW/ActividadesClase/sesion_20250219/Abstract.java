@@ -1,4 +1,4 @@
-package sesion_20250219;
+package ActividadesClase.sesion_20250219;
 
 abstract class Empleado {
     protected String nombre;

@@ -1,4 +1,4 @@
-package ASCII;
+package TestingNewThings.readingAndWritingFiles.ASCII;
 
 import java.io.*;
 import java.util.Scanner;

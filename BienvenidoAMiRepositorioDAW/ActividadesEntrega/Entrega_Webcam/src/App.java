@@ -1,4 +1,4 @@
-package src;
+package ActividadesEntrega.Entrega_Webcam.src;
 
 public class App {
     public static void main(String[] args) {
