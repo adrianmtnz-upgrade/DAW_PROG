@@ -1,6 +1,6 @@
 # EXERCISE 1 #
 
-Given a list of students with the following atributes: ID, idNumber, name, surnames, course name they are enrolled in, grades and age. Perform the following operations:
+Given a list of students with the following attributes: ID, idNumber, name, surnames, course name they are enrolled in, grades and age. Perform the following operations:
 
 - List all the students
 - Get the students whose name starts with L or G
